@@ -1,11 +1,6 @@
 # responsive-student-management
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Management Page - Documentation</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -115,6 +110,6 @@ student-management-page/
         This project is licensed under the MIT License - see the <a href="LICENSE">LICENSE</a> file for details.
     </p>
 </body>
-</html>
+
 
 
