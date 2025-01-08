@@ -1,64 +1,453 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Management</title>
-  <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css"> -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- <script rel="stylesheet" href="/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.querySelector('form').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const studentClass = document.getElementById('class').value.trim();
+
+      if (!name || !studentClass) {
+        Swal.fire({
+          icon: 'warning',
+          title: 'Incomplete Fields',
+          text: 'Please fill in all required fields before submitting.',
+        });
+      } else {
+        Swal.fire({
+          icon: 'success',
+          title: 'Form Submitted',
+          text: 'Your form has been successfully submitted!',
+        }).then(() => {
+          event.target.submit();
+        });
+      }
+    });
+  </script> -->
+  <style>
+    iframe#footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      height: 60px;
+      border: none;
+    }
+
+    body {
+      margin-bottom: 60px;
+    }
+  </style>
+
+  <style>
+    .marquee-container {
+      background-color: ;
+      overflow: hidden;
+      position: relative;
+      white-space: nowrap;
+      padding: 10px 0;
+    }
+
+    .marquee-text {
+      display: inline-block;
+      animation: marquee 20s linear infinite;
+      color: #721c24;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(100%);
+      }
+
+      to {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
+
+
+
+
+
+
+
+
+
+
+
 
 </head>
+
 <body>
-  <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- <div class="container-fluid">  -->
 
-    <!-- check container fluid
-  </div> -->
-  
-    <header style="display: flex; align-items: center; justify-content: center; padding: 10px; background-color: #f6f6f6;">
-        <img src="/images/stnt_mgmt_logo.jpg" alt="Logo" style="width: 50px; height: 50px; margin-right: 10px;">
-        <h1 style="margin: 0;">Student Management</h1>
-      </header>
-
-  
-  <h2 style="margin: 20px;text-align: center;">Welcome to Student Management</h2>
-
-  
-  <div style="display: flex;">
-    <nav style="width: 200px; background-color: #e0e0e0; padding: 20px;">
-      <ul style="list-style-type: none; padding: 0;">
-        <li><a href="#new-student">New Student</a></li>
-        <li><a href="#fees">Fees</a></li>
-        <li><a href="#class-periods">Class Periods</a></li>
-        <li><a href="#teachers">Teachers</a></li>
-      </ul>
-    </nav>
-
-    <!-- Main Content Section -->
-    <main style="flex: 1; padding: 20px;">
-      <form action="#" method="post">
-        <label for="name">Enter Name:</label><br>
-        <input type="text" id="name" name="name" required><br><br>
-        
-        <label for="class">Enter Class:</label><br>
-        <input type="text" id="class" name="class" required><br><br>
-        
-        <button type="submit">Submit</button>
-      </form>
-    </main>
+  <header class="d-flex align-items-center justify-content-center p-3 bg-light border-bottom">
+    <img src="images/stnt_mgmt_logo.jpg" alt="Logo" class="me-3" style="width: 50px; height: 50px;">
+    <h1 class="m-0">Student Management</h1>
+  </header>
+  <div class="marquee-container">
+    <div class="container">
+      <div class="marquee-text">
+        Don't share your details with anyone else!
+      </div>
+    </div>
   </div>
-</body>
-</html>
 
 
 
+  <h3 class="text-center my-1">Welcome to Student management </h3>
+
+
+
+  <div class="container">
+    <form action="#" method="post">
+      <div class="row">
+
+        <div class="col-md-3 bg-light p-3 rounded">
+          <!-- First Column Content -->
+          <div class="card mb-3">
+            <div class="card-header bg-danger text-white text-center">
+              <strong>--Links--</strong>
+            </div>
+            <div class="card-body">
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2">
+                  <a href="cards.html" class="card-link" target="_blank">New Student</a>
+                </li>
+                <li class="nav-item mb-2">
+                  <a href="#fees" class="card-link">Fees</a>
+                </li>
+                <li class="nav-item mb-2">
+                  <a href="#class-periods" class="card-link">Class Periods</a>
+                </li>
+                <li class="nav-item mb-2">
+                  <a href="#teachers" class="card-link">Teachers</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="card" style="max-height: 300px; overflow-y: auto;">
+            <div class="card-header bg-danger text-white text-center">
+              <strong>--What's New--</strong>
+            </div>
+            <div class="card-body">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">New course materials are available.</li>
+                <li class="list-group-item">School picnic on Jan 15.</li>
+                <li class="list-group-item">Holiday on Jan 26 for Republic Day.</li>
+                <li class="list-group-item">Submit projects by Feb 10.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+        
+        <main class="col-md-4 p-3">
+          <div class="mb-3">
+            <label for="name" class="form-label">Enter Name:</label>
+            <input type="text" id="name" name="name" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label for="roll" class="form-label">Enter Roll no.:</label>
+            <input type="text" id="roll" name="roll" class="form-control">
+          </div>
+          <div class="mb-5">
+            <label for="classDropdown" class="form-label">Select Class</label>
+            <select id="classDropdown" class="form-select">
+              <option selected disabled>Choose your class...</option>
+              <option value="1">Class 1st</option>
+              <option value="2">Class 2nd</option>
+              <option value="3">Class 3rd</option>
+              <option value="4">Class 4th</option>
+              <option value="5">Class 5th</option>
+            </select>
+          </div>
+          <div class="mb-5">
+            <label for="date" class="form-label">Enter Date of birth:</label>
+            <input type="date" id="date" name="date" class="form-control">
+          </div>
+
+          <!-- <div class="mb-5">
+            <label for="date" class="date">Enter Date of birth:</label>
+            <input type="date" id="date" name="date" class="form-label">
+          </div> -->
+
+
+          <div class="mb-3">
+            <label class="form-label">Select Gender:</label>
+            <div class="d-flex">
+              <div class="form-check me-3">
+                <input type="radio" id="male" name="gender" value="Male" class="form-check-input">
+                <label for="male" class="form-check-label">Male</label>
+              </div>
+              <div class="form-check me-3">
+                <input type="radio" id="female" name="gender" value="Female" class="form-check-input">
+                <label for="female" class="form-check-label">Female</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" id="other" name="gender" value="Other" class="form-check-input">
+                <label for="other" class="form-check-label">Other</label>
+              </div>
+            </div>
+          </div>
+        </main>
+
+
+
+
+
+
+
+
+
+
+
+        
+
+  
+        <!-- Second Form Column -->
+        <main class="col-md-4 p-3">
+          <div class="mb-3">
+            <label for="fatherName" class="form-label">Fathers Name:</label>
+            <input type="text" id="fatherName" name="fatherName" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label for="fatherNumber" class="form-label">Fathers Number.:</label>
+            <input type="text" id="fatherNumber" name="fatherNumber" class="form-control">
+          </div>
+          <div class="mb-5">
+            <label for="sectionDropdown" class="form-label">Select Section</label>
+            <select id="sectionDropdown" class="form-select">
+              <option selected disabled>Choose your section...</option>
+              <option value="A">A</option>
+              <option value="B">B</option>
+              <option value="C">C</option>
+              <option value="D">D</option>
+              <option value="E">E</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="motherName" class="form-label">Mothers Name:</label>
+            <input type="text" id="motherName" name="motherName" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label for="motherNumber" class="form-label">Mothers Number:</label>
+            <input type="text" id="motherNumber" name="motherNumber" class="form-control">
+          </div>
+        </main>
+      </div>
+
+
+
+
+
+  
+      <!-- Submit Button Centered -->
+      <div class="row justify-content-center mt-4">
+        <div class="col-md-4 text-center">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </form> <!-- Form closes here -->
+  </div>
+  
+      <!-- form second column end -->
+      <!-- <div class="row">
+        <aside class="col-md-3 bg-light p-3 rounded">
+        <div class="card mb-3">
+
+        </div>
+      </aside>
+        <div class="md-8" style="align-items: center; margin-top:-70px" >
+           
+          <button type="submit" class="btn btn-primary btn-sm" style="width: 120px; height: 40px;">Submit</button>
+          
+        
+        </div>
+      </div>
     
+  <!-- </div> -->
 
-
-
-
-
+  
     
-</body>
+  
+  
 
+  <!-- <div class="card mb-3">
+
+  </div>
+
+  <div class="card mb-8" style="margin-top:-70px">
+    <button type="submit" class="btn btn-primary btn-sm" style="width: 120px; height: 40px;">Submit</button> -->
+
+
+  <!-- </div> -->
+
+
+
+
+
+
+
+  <!-- <div class="container">
+  <div class="row">
+    <button class="col-md-1 bg-light p-3 rounded" onclick="document.getElementById('myImage').src='/images/pic_bulbon.gif'">Turn on the light</button>
+
+      <img id="myImage" src="/images/pic_bulboff.gif" style="width:100px">
+
+        <button class="col-md-1 bg-light p-3 rounded" onclick="document.getElementById('myImage').src='/images/pic_bulboff.gif'">Turn off the light</button>
+  </div>
+</div> -->
+  <!-- <footer class="text-center bg-light py-3 mt-2border-top">
+    <p class="mb-0">&copy; 2025 Student Management. All Rights Reserved.</p>
+</footer> -->
+  <!-- <footer class="bg-white text-black py-3 position-fixed bottom-0 w-100">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-md-12">
+        <p class="mb-0">© 2025 Student Management. All Rights Reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer> -->
+  <iframe id="footer" src="footer.html"></iframe>
+
+  <script>
+    const genderInputs = document.querySelectorAll('input[name="gender"]');
+
+    genderInputs.forEach((input) => {
+        input.addEventListener('change', () => {
+            Swal.fire({
+                icon: 'info',
+                title: 'Gender Selected',
+                text: `You selected: ${input.value}`,
+                showConfirmButton: false,
+                timer: 2000,
+            });
+        });
+    });
+
+    document.querySelector('form').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const rollNumber = document.getElementById('roll').value.trim();
+        const selectedClass = document.getElementById('classDropdown').value;
+        const date = document.getElementById('date').value;
+        const motherName = document.getElementById('motherName').value.trim();
+        const motherNumber = document.getElementById('motherNumber').value.trim();
+        const fatherName = document.getElementById('fatherName').value.trim();
+        const fatherNumber = document.getElementById('fatherNumber').value.trim();
+        const section = document.getElementById('sectionDropdown').value;
+
+        const nameRegex = /^[A-Za-z\s]+$/;
+        const classRegex = /^[0-9]+$/;
+        const phoneRegex = /^[0-9]{10}$/;
+        const isValidDate = (dateString) => {
+            const date = new Date(dateString);
+            const year = date.getFullYear();
+            return (
+                !isNaN(date) &&
+                dateString === date.toISOString().split('T')[0] &&
+                year >= 1950
+            );
+        };
+
+        if (!name || !rollNumber || !motherName || !motherNumber || !fatherName || !fatherNumber || !section) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Incomplete Fields',
+                text: 'Please fill in all required fields before submitting.',
+            });
+        } else if (selectedClass === 'Choose your class...' || !selectedClass) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Class Not Selected',
+                text: 'Please select a class from the dropdown.',
+            });
+        } else if (!isValidDate(date)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Invalid Date!',
+                text: 'Please enter a valid date (YYYY-MM-DD) and ensure the year is 1950 or later.',
+                confirmButtonText: 'Try Again',
+            });
+        } else if (!nameRegex.test(name)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Invalid Name',
+                text: 'The "Name" field should only contain letters.',
+            });
+        } else if (!classRegex.test(rollNumber)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Invalid Roll Number',
+                text: 'The "Roll Number" field should only contain numbers.',
+            });
+        } else if (!nameRegex.test(motherName)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Invalid Mothers Name',
+                text: 'The "Mothers Name" field should only contain letters.',
+            });
+        } else if (!phoneRegex.test(motherNumber)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Invalid Mothers Number',
+                text: 'The "Mothers Number" field should be a valid 10-digit phone number.',
+            });
+        } else if (!nameRegex.test(fatherName)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Invalid Fathers Name',
+                text: 'The "Fathers Name" field should only contain letters.',
+            });
+        } else if (!phoneRegex.test(fatherNumber)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Invalid Fathers Number',
+                text: 'The "Fathers Number" field should be a valid 10-digit phone number.',
+            });
+        } else if (section.length > 1 || !/^[A-Za-z]$/.test(section)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Invalid Section',
+                text: 'The "Section" field should only contain a single letter.',
+            });
+        } else {
+            Swal.fire({
+                icon: 'success',
+                title: 'Form Submitted',
+                text: 'Your form has been successfully submitted!',
+            }).then(() => {
+                event.target.submit();
+            });
+        }
+    });
+</script>
+
+
+
+
+
+
+</body>
 
 </html>
