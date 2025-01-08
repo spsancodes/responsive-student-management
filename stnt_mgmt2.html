@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Management</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css"> -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- <script rel="stylesheet" href="/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.querySelector('form').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const studentClass = document.getElementById('class').value.trim();
+
+      if (!name || !studentClass) {
+        Swal.fire({
+          icon: 'warning',
+          title: 'Incomplete Fields',
+          text: 'Please fill in all required fields before submitting.',
+        });
+      } else {
+        Swal.fire({
+          icon: 'success',
+          title: 'Form Submitted',
+          text: 'Your form has been successfully submitted!',
+        }).then(() => {
+          event.target.submit();
+        });
+      }
+    });
+  </script> -->
+  <style>
+    iframe#footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      height: 60px; 
+      border: none;
+    }
+    body {
+      margin-bottom: 60px; 
+    }
+  </style>
+  
+
+
+
+  
+
+
+
+  
+
+
+
+</head>
+<body>
+  
+  <header class="d-flex align-items-center justify-content-center p-3 bg-light border-bottom">
+    <img src="/images/stnt_mgmt_logo.jpg" alt="Logo" class="me-3" style="width: 50px; height: 50px;">
+    <h1 class="m-0">Student Management</h1>
+  </header>
+
+  
+  <h2 class="text-center my-4">Welcome to Student Management</h2>
+
+  
+<div class="container">
+    <div class="row">
+
+        <nav class="col-md-3 bg-light p-3 rounded">
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2">
+                    <a href="cards.html" class="card-link " target="_blank">New Student</a>
+                        
+                </li>
+                <li class="nav-item mb-2">
+                    <a href="#fees" class="card-link"> Fees </a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a class="card-link" href="#class-periods">Class Periods</a>
+                </li>
+                <li class="nav-item">
+                    <a class="card-link" href="#teachers">Teachers</a>
+                </li>
+            </ul>
+        </nav>
+
+
+        <main class="col-md-9 p-3">
+            <form action="#" method="post">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Enter Name:</label>
+                    <input type="text" id="name" name="name" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="class" class="form-label">Enter Class:</label>
+                    <input type="text" id="class" name="class" class="form-control">
+                    
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="date" class="date">Enter Date of birth:</label>
+                    <input type="date" id="date" name="date" class="form-label">
+                </div>
+
+
+                <div class="mb-3">
+                  <label class="form-label">Select Gender:</label>
+                  <div class="d-flex">
+                    <div class="form-check me-3">
+                      <input type="radio" id="male" name="gender" value="Male" class="form-check-input">
+                      <label for="male" class="form-check-label">Male</label>
+                    </div>
+                    <div class="form-check me-3">
+                      <input type="radio" id="female" name="gender" value="Female" class="form-check-input">
+                      <label for="female" class="form-check-label">Female</label>
+                    </div>
+                    <div class="form-check">
+                      <input type="radio" id="other" name="gender" value="Other" class="form-check-input">
+                      <label for="other" class="form-check-label">Other</label>
+                    </div>
+                  </div>
+                </div>
+                
+                
+                
+                
+                
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </main>
+    </div>
+</div>
+<!-- <footer class="text-center bg-light py-3 mt-2border-top">
+    <p class="mb-0">&copy; 2025 Student Management. All Rights Reserved.</p>
+</footer> -->
+<!-- <footer class="bg-white text-black py-3 position-fixed bottom-0 w-100">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-md-12">
+        <p class="mb-0">© 2025 Student Management. All Rights Reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer> -->
+<iframe id="footer" src="footer.html"></iframe>
+<script>
+
+
+const genderInputs = document.querySelectorAll('input[name="gender"]');
+
+  
+  genderInputs.forEach((input) => {
+    input.addEventListener('change', () => {
+      Swal.fire({
+        icon: 'info',
+        title: 'Gender Selected',
+        text: `You selected: ${input.value}`,
+        showConfirmButton: false,
+        timer: 2000, 
+      });
+    });
+  });
+  document.querySelector('form').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const studentClass = document.getElementById('class').value.trim();
+    const date = document.getElementById('date').value;
+    
+
+    const nameRegex = /^[A-Za-z\s]+$/;
+    const classRegex = /^[0-9]+$/;
+    const isValidDate = (dateString) => {
+      const date = new Date(dateString);
+      const year = date.getFullYear();
+      return (
+        !isNaN(date) &&
+        dateString === date.toISOString().split('T')[0] &&
+        year >= 1950
+      );
+    };
+
+    
+
+    
+
+    if (!name || !studentClass) {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Incomplete Fields',
+        text: 'Please fill in all required fields before submitting.',
+      });
+    } else if (!isValidDate(date)) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Invalid Date!',
+        text: 'Please enter a valid date (YYYY-MM-DD) and ensure the year is 1950 or later.',
+        confirmButtonText: 'Try Again',
+      });
+    } else if (!nameRegex.test(name)) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Invalid Name',
+        text: 'The "Name" field should only contain letters.',
+      });
+    } else if (!classRegex.test(studentClass)) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Invalid Class',
+        text: 'The "Class" field should only contain numbers.',
+      });
+    } else {
+      Swal.fire({
+        icon: 'success',
+        title: 'Form Submitted',
+        text: 'Your form has been successfully submitted!',
+      }).then(() => {
+        event.target.submit();
+      });
+    }
+  });
+</script>
+
+
+
+  
+  
+  
+</body>
+</html>
