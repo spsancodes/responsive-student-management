@@ -85,7 +85,7 @@ We hope this project serves as a stepping stone for those new to web development
 
 ---
 
-Thank you for visiting! 😊
+Thank you for visiting! 
 
 
 
